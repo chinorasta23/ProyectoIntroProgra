@@ -4,6 +4,10 @@
  */
 package proyectointroprogra;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author dooha
@@ -13,16 +17,18 @@ public class facturasViewer extends javax.swing.JFrame {
     /**
      * Creates new form facturasViewer
      */
-    public facturasViewer() {
-        initComponents();
-    }
     
     
-        private List<Facturas> listaFacturas;
+    private List<Facturas> listaFacturas;
+    
+    DefaultTableModel model;
+    
      
-    public verFacturas(List<Facturas> listaFacturas) {
+    public facturasViewer(List<Facturas> listaFacturas) {
         initComponents();
         this.listaFacturas = listaFacturas;
+        
+        model = (DefaultTableModel) tabla.getModel();
 
         // Llamar al método para llenar la tabla con los datos de la lista
         llenarTabla();
@@ -30,8 +36,7 @@ public class facturasViewer extends javax.swing.JFrame {
     }
     
     private void llenarTabla() {
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        
+         
         // Recorrer la lista de facturas y agregar cada factura a la tabla
         for (Facturas factura : listaFacturas) {
             Object[] fila = {factura.getNombre(), factura.getApellido(), factura.getFechaFactura(), factura.getMontoFactura()};
@@ -50,7 +55,7 @@ public class facturasViewer extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabla = new javax.swing.JTable();
         borrarButton = new javax.swing.JButton();
         regresarButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -60,27 +65,27 @@ public class facturasViewer extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setBackground(new java.awt.Color(255, 255, 255));
-        jTable1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jTable1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(255, 255, 255));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabla.setBackground(new java.awt.Color(255, 255, 255));
+        tabla.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tabla.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        tabla.setForeground(new java.awt.Color(0, 0, 0));
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null}
+
             },
             new String [] {
                 "Nombre", "Apellido", "Fecha Factura", "Monto"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, true, true, true
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tabla);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 420, 290));
 
@@ -89,6 +94,11 @@ public class facturasViewer extends javax.swing.JFrame {
         borrarButton.setForeground(new java.awt.Color(255, 255, 255));
         borrarButton.setText("BORRAR");
         borrarButton.setBorder(null);
+        borrarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                borrarButtonActionPerformed(evt);
+            }
+        });
         jPanel1.add(borrarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, 120, 40));
 
         regresarButton.setBackground(new java.awt.Color(0, 153, 153));
@@ -96,6 +106,11 @@ public class facturasViewer extends javax.swing.JFrame {
         regresarButton.setForeground(new java.awt.Color(255, 255, 255));
         regresarButton.setText("REGRESAR");
         regresarButton.setBorder(null);
+        regresarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                regresarButtonActionPerformed(evt);
+            }
+        });
         jPanel1.add(regresarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 120, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpg"))); // NOI18N
@@ -115,6 +130,26 @@ public class facturasViewer extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void regresarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresarButtonActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+    }//GEN-LAST:event_regresarButtonActionPerformed
+
+    private void borrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarButtonActionPerformed
+        
+        int x = tabla.getSelectedRow();
+        
+        if (x >= 0){
+            listaFacturas.remove(x);
+            model.removeRow(x);
+            
+            
+        }
+        
+        
+        
+    }//GEN-LAST:event_borrarButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,7 +181,10 @@ public class facturasViewer extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new facturasViewer().setVisible(true);
+            List<Facturas> listaFacturas = new ArrayList<>();
+
+            // Crear la instancia de verFacturas y pasar la lista de facturas
+            new facturasViewer(listaFacturas).setVisible(true);
             }
         });
     }
@@ -156,7 +194,7 @@ public class facturasViewer extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton regresarButton;
+    private javax.swing.JTable tabla;
     // End of variables declaration//GEN-END:variables
 }

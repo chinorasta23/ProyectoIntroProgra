@@ -171,7 +171,7 @@ public class facturacion extends javax.swing.JFrame {
     }//GEN-LAST:event_regresarBtnActionPerformed
 
     private void verFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verFacturasActionPerformed
-        new verFacturas(listaFacturas).setVisible(true);
+        new facturasViewer(listaFacturas).setVisible(true);
     }//GEN-LAST:event_verFacturasActionPerformed
 
     /**

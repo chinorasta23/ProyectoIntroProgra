@@ -4,9 +4,6 @@
  */
 package proyectointroprogra;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author dooha
@@ -27,7 +24,6 @@ public class main extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         salirBtn = new javax.swing.JButton();
         reservar = new javax.swing.JButton();
-        verFacturas = new javax.swing.JButton();
         facturarBtn = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
@@ -53,25 +49,14 @@ public class main extends javax.swing.JFrame {
         reservar.setForeground(new java.awt.Color(255, 255, 255));
         reservar.setText("RESERVAR");
         reservar.setBorder(null);
-        jPanel2.add(reservar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 120, 120));
-
-        verFacturas.setBackground(new java.awt.Color(0, 153, 153));
-        verFacturas.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        verFacturas.setForeground(new java.awt.Color(255, 255, 255));
-        verFacturas.setText("VER FACTURAS");
-        verFacturas.setBorder(null);
-        verFacturas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                verFacturasActionPerformed(evt);
-            }
-        });
-        jPanel2.add(verFacturas, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 120, 120));
+        jPanel2.add(reservar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 120, 120));
 
         facturarBtn.setBackground(new java.awt.Color(0, 153, 153));
         facturarBtn.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         facturarBtn.setForeground(new java.awt.Color(255, 255, 255));
-        facturarBtn.setText("FACTURAR");
+        facturarBtn.setText("FACTURACIÓN");
         facturarBtn.setBorder(null);
+        facturarBtn.setBorderPainted(false);
         facturarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 facturarBtnActionPerformed(evt);
@@ -108,14 +93,6 @@ public class main extends javax.swing.JFrame {
         new JfInicio().setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_salirBtnActionPerformed
-
-    private void verFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verFacturasActionPerformed
-        List<Facturas> listaFacturas = new ArrayList<>();
-        // Aquí deberías tener algún código para obtener la lista de facturas que deseas mostrar
-
-        verFacturas verFacturasFrame = new verFacturas(listaFacturas);
-        verFacturasFrame.setVisible(true);
-    }//GEN-LAST:event_verFacturasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,6 +135,5 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton reservar;
     private javax.swing.JButton salirBtn;
-    private javax.swing.JButton verFacturas;
     // End of variables declaration//GEN-END:variables
 }

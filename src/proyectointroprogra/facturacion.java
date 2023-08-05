@@ -73,8 +73,11 @@ public class facturacion extends javax.swing.JFrame {
         crearFacturaBtn.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         crearFacturaBtn.setForeground(new java.awt.Color(255, 255, 255));
         crearFacturaBtn.setText("FACTURAR");
+        crearFacturaBtn.setToolTipText("");
         crearFacturaBtn.setBorder(null);
         crearFacturaBtn.setBorderPainted(false);
+        crearFacturaBtn.setHideActionText(true);
+        crearFacturaBtn.setName(""); // NOI18N
         crearFacturaBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 crearFacturaBtnActionPerformed(evt);

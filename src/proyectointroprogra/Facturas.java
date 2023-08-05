@@ -4,8 +4,6 @@
  */
 package proyectointroprogra;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author dooha

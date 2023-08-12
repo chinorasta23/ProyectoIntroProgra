@@ -26,76 +26,121 @@ public class JfInicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        TITLE = new javax.swing.JLabel();
+        mainPanel = new javax.swing.JPanel();
         btnLogin = new javax.swing.JButton();
-        btnRegistrar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
-        bg = new javax.swing.JLabel();
+        Header = new javax.swing.JPanel();
+        TITLE = new javax.swing.JLabel();
+        Footer = new javax.swing.JPanel();
+        FooterText = new javax.swing.JLabel();
+        btnRegistrar1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        mainPanel.setBackground(new java.awt.Color(102, 102, 102));
+        mainPanel.setForeground(new java.awt.Color(102, 102, 102));
+        mainPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        TITLE.setFont(new java.awt.Font("Roboto", 0, 36)); // NOI18N
-        TITLE.setForeground(new java.awt.Color(0, 153, 153));
-        TITLE.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TITLE.setText("BIENVENIDO");
-        TITLE.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jPanel1.add(TITLE, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 610, -1));
-
-        btnLogin.setBackground(new java.awt.Color(0, 153, 153));
+        btnLogin.setBackground(new java.awt.Color(102, 0, 102));
         btnLogin.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("LOGIN");
         btnLogin.setBorder(null);
         btnLogin.setBorderPainted(false);
+        btnLogin.setFocusPainted(false);
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 140, 40));
+        mainPanel.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 140, 40));
 
-        btnRegistrar.setBackground(new java.awt.Color(0, 153, 153));
-        btnRegistrar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegistrar.setText("REGISTRARSE");
-        btnRegistrar.setBorder(null);
-        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 140, 40));
-
-        btnSalir.setBackground(new java.awt.Color(0, 153, 153));
+        btnSalir.setBackground(new java.awt.Color(102, 0, 102));
         btnSalir.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         btnSalir.setForeground(new java.awt.Color(255, 255, 255));
         btnSalir.setText("SALIR");
         btnSalir.setBorder(null);
+        btnSalir.setFocusPainted(false);
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 140, 40));
+        mainPanel.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 140, 40));
 
-        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpg"))); // NOI18N
-        bg.setText("jLabel2");
-        jPanel1.add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 370));
+        Header.setBackground(new java.awt.Color(0, 0, 0));
+
+        TITLE.setFont(new java.awt.Font("Roboto", 0, 36)); // NOI18N
+        TITLE.setForeground(new java.awt.Color(153, 153, 153));
+        TITLE.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TITLE.setText("BIENVENIDO");
+        TITLE.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+
+        javax.swing.GroupLayout HeaderLayout = new javax.swing.GroupLayout(Header);
+        Header.setLayout(HeaderLayout);
+        HeaderLayout.setHorizontalGroup(
+            HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HeaderLayout.createSequentialGroup()
+                .addComponent(TITLE, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        HeaderLayout.setVerticalGroup(
+            HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(TITLE, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        mainPanel.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 70));
+
+        Footer.setBackground(new java.awt.Color(0, 0, 0));
+
+        FooterText.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        FooterText.setForeground(new java.awt.Color(153, 153, 153));
+        FooterText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        FooterText.setText("Universidad Fidélitas - SC 202");
+        FooterText.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+
+        javax.swing.GroupLayout FooterLayout = new javax.swing.GroupLayout(Footer);
+        Footer.setLayout(FooterLayout);
+        FooterLayout.setHorizontalGroup(
+            FooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FooterLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(FooterText, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        FooterLayout.setVerticalGroup(
+            FooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(FooterText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+        );
+
+        mainPanel.add(Footer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 610, 60));
+
+        btnRegistrar1.setBackground(new java.awt.Color(102, 0, 102));
+        btnRegistrar1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        btnRegistrar1.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrar1.setText("REGISTRARSE");
+        btnRegistrar1.setBorder(null);
+        btnRegistrar1.setFocusPainted(false);
+        btnRegistrar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrar1ActionPerformed(evt);
+            }
+        });
+        mainPanel.add(btnRegistrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 140, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -105,17 +150,17 @@ public class JfInicio extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
 
-    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        JfRegistrar vRegistrar = new JfRegistrar();
-        vRegistrar.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btnRegistrarActionPerformed
-
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         JfLogin vLogin = new JfLogin();
         vLogin.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void btnRegistrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrar1ActionPerformed
+        JfRegistrar vRegistrar = new JfRegistrar();
+        vRegistrar.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnRegistrar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,11 +198,13 @@ public class JfInicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Footer;
+    private javax.swing.JLabel FooterText;
+    private javax.swing.JPanel Header;
     private javax.swing.JLabel TITLE;
-    private javax.swing.JLabel bg;
     private javax.swing.JButton btnLogin;
-    private javax.swing.JButton btnRegistrar;
+    private javax.swing.JButton btnRegistrar1;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel mainPanel;
     // End of variables declaration//GEN-END:variables
 }

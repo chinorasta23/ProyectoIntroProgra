@@ -18,7 +18,7 @@ public class AddEventos extends javax.swing.JFrame {
      */
     
     private List<Evento> eventos;
-    EventoManagement eventoManagement = new EventoManagement(eventos);
+    EventoManagement eventoManagement = new EventoManagement();
     
     public AddEventos() {
         initComponents();

@@ -16,12 +16,12 @@ import java.util.List;
 public class EventoManagement {
     private List<Evento> eventos;
    
-    public EventoManagement(List<Evento> eventos) {
-        this.eventos = eventos;
+    public EventoManagement() {
     }
 
     public void agregarEvento(Evento event) {
         eventos.add(event);
+        System.out.println(eventos);
     }
 
     public void editarEvento(int eventId, Evento newEventoo) {

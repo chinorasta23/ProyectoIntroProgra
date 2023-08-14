@@ -15,26 +15,24 @@ public class VerEventos extends javax.swing.JFrame {
 
     private List<Evento> eventos;
     
-    public VerEventos(List<Evento> eventos) {
+    public VerEventos() {
         initComponents();
-        this.eventos = eventos;
-        model = (DefaultTableModel) tabla.getModel();
         llenarTabla();
-        System.out.print(eventos);
     }
     
     DefaultTableModel model;
 
     private void llenarTabla() {
+        DefaultTableModel model = (DefaultTableModel) tabla.getModel();
         for (Evento evento : eventos) {
-            Object[] fila = {evento.getEventoId(), evento.getEventoNombre(), evento.getCiudad(), evento.getDireccion(), evento.getCategoria(), evento.getFecha(), evento.getCapacidad(), evento.getAsientosVendidos(), evento.getEdadMinima()};
+            Object[] fila = {
+                evento.getEventoId(), evento.getEventoNombre(), evento.getCiudad(),
+                evento.getDireccion(), evento.getCategoria(), evento.getFecha(),
+                evento.getCapacidad(), evento.getAsientosVendidos(), evento.getEdadMinima()
+            };
             model.addRow(fila);
         }
     }
-    
-    
-    
-    
     
     @SuppressWarnings("unchecked")
     

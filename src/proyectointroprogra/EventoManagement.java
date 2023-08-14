@@ -15,17 +15,9 @@ import java.util.List;
 
 public class EventoManagement {
     private List<Evento> eventos;
-    private static EventoManagement instance;
    
-    public static EventoManagement getInstance() {
-        if (instance == null) {
-            instance = new EventoManagement();
-        }
-        return instance;
-    }
-    
-    public EventoManagement() {
-        eventos = new ArrayList<>();
+    public EventoManagement(List<Evento> eventos) {
+        this.eventos = eventos;
     }
 
     public void agregarEvento(Evento event) {

@@ -4,6 +4,9 @@
  */
 package proyectointroprogra;
 
+import java.util.List;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author dooha
@@ -13,6 +16,10 @@ public class AddEventos extends javax.swing.JFrame {
     /**
      * Creates new form AddEventos
      */
+    
+    private List<Evento> eventos;
+    EventoManagement eventoManagement = new EventoManagement(eventos);
+    
     public AddEventos() {
         initComponents();
     }
@@ -49,10 +56,12 @@ public class AddEventos extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        AgregarEvento = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
         jPanel1.setForeground(new java.awt.Color(102, 102, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -202,18 +211,30 @@ public class AddEventos extends javax.swing.JFrame {
         jLabel11.setText("ASIENTOS VENDIDOS");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 230, -1));
 
-        jButton1.setBackground(new java.awt.Color(102, 0, 102));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("AGREGAR");
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setFocusPainted(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        AgregarEvento.setBackground(new java.awt.Color(102, 0, 102));
+        AgregarEvento.setForeground(new java.awt.Color(255, 255, 255));
+        AgregarEvento.setText("AGREGAR");
+        AgregarEvento.setBorder(null);
+        AgregarEvento.setBorderPainted(false);
+        AgregarEvento.setFocusPainted(false);
+        AgregarEvento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                AgregarEventoActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 344, 230, 40));
+        jPanel1.add(AgregarEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 344, 230, 40));
+
+        jButton2.setBackground(new java.awt.Color(102, 0, 102));
+        jButton2.setText("<");
+        jButton2.setBorder(null);
+        jButton2.setBorderPainted(false);
+        jButton2.setFocusPainted(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 30, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -237,9 +258,8 @@ public class AddEventos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_NOMBRETEXTActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        EventoManagement eventoManagement = new EventoManagement();
-        
+    private void AgregarEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarEventoActionPerformed
+
         String ID = IDTEXT.getText();
         int IDN = Integer.parseInt(ID);
         String Nombre = NOMBRETEXT.getText();
@@ -257,7 +277,24 @@ public class AddEventos extends javax.swing.JFrame {
         
         Evento evento = new Evento(IDN, Nombre, Ciudad, Direccion, Categoria, Fecha, CapacidadN, AsientosVendidosN, EdadMinimaN);
         eventoManagement.agregarEvento(evento);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        
+        JOptionPane.showMessageDialog(null,"Se agregó el evento correctamente...");
+        
+        IDTEXT.setText("");
+        NOMBRETEXT.setText("");
+        CIUDADTEXT.setText("");
+        DIRECCIONTEXT.setText("");
+        CATEGORIATEXT.setText("");
+        FECHATEXT.setText("");
+        CAPACIDADTEXT.setText("");
+        ASIENTOSVENDIDOSTEXT.setText("");
+        EDADMINIMATEXT.setText("");
+    }//GEN-LAST:event_AgregarEventoActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        new GestorEventos().setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -296,6 +333,7 @@ public class AddEventos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ASIENTOSVENDIDOSTEXT;
+    private javax.swing.JButton AgregarEvento;
     private javax.swing.JTextField CAPACIDADTEXT;
     private javax.swing.JTextField CATEGORIATEXT;
     private javax.swing.JTextField CIUDADTEXT;
@@ -304,7 +342,7 @@ public class AddEventos extends javax.swing.JFrame {
     private javax.swing.JTextField FECHATEXT;
     private javax.swing.JTextField IDTEXT;
     private javax.swing.JTextField NOMBRETEXT;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

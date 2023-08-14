@@ -13,6 +13,8 @@ public class main extends javax.swing.JFrame {
     /**
      * Creates new form main
      */
+    private EventoManagement eventoManagement;
+
     public main() {
         initComponents();
     }
@@ -23,7 +25,7 @@ public class main extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         salirBtn = new javax.swing.JButton();
-        reservar = new javax.swing.JButton();
+        EventosBtn = new javax.swing.JButton();
         facturarBtn = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -49,13 +51,18 @@ public class main extends javax.swing.JFrame {
         });
         jPanel2.add(salirBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 30, 30));
 
-        reservar.setBackground(new java.awt.Color(102, 0, 102));
-        reservar.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        reservar.setForeground(new java.awt.Color(255, 255, 255));
-        reservar.setText("EVENTOS");
-        reservar.setBorder(null);
-        reservar.setFocusPainted(false);
-        jPanel2.add(reservar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 470, 60));
+        EventosBtn.setBackground(new java.awt.Color(102, 0, 102));
+        EventosBtn.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        EventosBtn.setForeground(new java.awt.Color(255, 255, 255));
+        EventosBtn.setText("EVENTOS");
+        EventosBtn.setBorder(null);
+        EventosBtn.setFocusPainted(false);
+        EventosBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EventosBtnActionPerformed(evt);
+            }
+        });
+        jPanel2.add(EventosBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 470, 60));
 
         facturarBtn.setBackground(new java.awt.Color(102, 0, 102));
         facturarBtn.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -137,14 +144,20 @@ public class main extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_salirBtnActionPerformed
 
+    private void EventosBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EventosBtnActionPerformed
+        new GestorEventos().setVisible(true);
+        setVisible(false);
+        
+    }//GEN-LAST:event_EventosBtnActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton EventosBtn;
     private javax.swing.JButton facturarBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JButton reservar;
     private javax.swing.JButton salirBtn;
     // End of variables declaration//GEN-END:variables
 }

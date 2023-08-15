@@ -7,18 +7,21 @@ package proyectointroprogra;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
  *
  * @author Francisco
  */
 
 public class EventoManagement {
-    private List<Evento> eventos;
+    private static List<Evento> eventos = new ArrayList<>();
    
     public EventoManagement() {
     }
 
+    public static List<Evento> getEventos() {
+        return eventos;
+    }
+    
     public void agregarEvento(Evento event) {
         eventos.add(event);
         System.out.println(eventos);
@@ -30,6 +33,9 @@ public class EventoManagement {
         eventos.set(eventId, newEventoo);
     }
 
+    public void borrarEvento(Evento x) {   
+        eventos.remove(x);
+    }
    
     public void desactivarEvento(int eventId) {
         Evento event = eventos.get(eventId);

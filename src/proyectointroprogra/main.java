@@ -8,14 +8,14 @@ package proyectointroprogra;
  *
  * @author dooha
  */
-public class main extends javax.swing.JFrame {
+public class Main extends javax.swing.JFrame {
 
     /**
-     * Creates new form main
+     * Creates new form Main
      */
     private EventoManagement eventoManagement;
 
-    public main() {
+    public Main() {
         initComponents();
     }
 

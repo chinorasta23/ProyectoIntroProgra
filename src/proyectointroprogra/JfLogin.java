@@ -171,7 +171,7 @@ public class JfLogin extends javax.swing.JFrame {
 
         if (almacenamiento.validarCredenciales(usuario, password)) {
             JOptionPane.showMessageDialog(JfLogin.this, "¡Inicio de Sesión Exitoso!");
-            new main().setVisible(true);
+            new Main().setVisible(true);
             setVisible(false);
         } else {
             JOptionPane.showMessageDialog(JfLogin.this, "Inicio de Sesión Fallido. Verifica tus credenciales.", "Error", JOptionPane.ERROR_MESSAGE);

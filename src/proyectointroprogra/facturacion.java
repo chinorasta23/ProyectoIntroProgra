@@ -12,13 +12,11 @@ import java.util.List;
  * @author dooha
  */
 public class Facturacion extends javax.swing.JFrame { 
-
+    Facturar facturar = new Facturar();
+    
     public Facturacion() {
         initComponents();
     }
-    
-   private List<Facturas> listaFacturas = new ArrayList<>();
-
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -183,8 +181,8 @@ public class Facturacion extends javax.swing.JFrame {
 
     // Crear una nueva instancia de Facturas
     Facturas factura = new Facturas(nombre, apellido, fecha, monto);
-
-    listaFacturas.add(factura);
+    
+    facturar.agregarFactura(factura);
 
     nombreFactura.setText("Nombre...");
     apellidoFactura.setText("Apellido...");
@@ -193,19 +191,14 @@ public class Facturacion extends javax.swing.JFrame {
 
     }//GEN-LAST:event_crearFacturaBtnActionPerformed
 
-    //Getter para la lista
-    public List<Facturas> getListaFacturas() {
-        return listaFacturas;
-    }
-        
     private void regresarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresarBtnActionPerformed
         // TODO add your handling code here:
-        new main().setVisible(true);
+        new Main().setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_regresarBtnActionPerformed
 
     private void verFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verFacturasActionPerformed
-        new FacturasViewer(listaFacturas).setVisible(true);
+        new FacturasViewer().setVisible(true);
     }//GEN-LAST:event_verFacturasActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

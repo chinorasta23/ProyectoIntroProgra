@@ -4,8 +4,10 @@
 
 package proyectointroprogra;
 
-import java.util.*;
-
+/**
+ *
+ * @author Francisco
+ */
 
 class Evento {
     private int eventoId;

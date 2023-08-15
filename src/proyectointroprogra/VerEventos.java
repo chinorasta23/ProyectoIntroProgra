@@ -12,11 +12,13 @@ import javax.swing.table.DefaultTableModel;
  * @author dooha
  */
 public class VerEventos extends javax.swing.JFrame {
-
+    EventoManagement eventoManagement = new EventoManagement();
     private List<Evento> eventos;
     
     public VerEventos() {
         initComponents();
+        model = (DefaultTableModel) tabla.getModel();
+        eventos = eventoManagement.getEventos();
         llenarTabla();
     }
     
@@ -46,6 +48,8 @@ public class VerEventos extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
+        BorrarBtn = new javax.swing.JButton();
+        RegresarBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,7 +108,33 @@ public class VerEventos extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tabla);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 550, 280));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 550, 230));
+
+        BorrarBtn.setBackground(new java.awt.Color(102, 0, 102));
+        BorrarBtn.setForeground(new java.awt.Color(255, 255, 255));
+        BorrarBtn.setText("BORRAR");
+        BorrarBtn.setBorder(null);
+        BorrarBtn.setBorderPainted(false);
+        BorrarBtn.setFocusPainted(false);
+        BorrarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BorrarBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BorrarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, 140, 40));
+
+        RegresarBtn.setBackground(new java.awt.Color(102, 0, 102));
+        RegresarBtn.setForeground(new java.awt.Color(255, 255, 255));
+        RegresarBtn.setText("REGRESAR");
+        RegresarBtn.setBorder(null);
+        RegresarBtn.setBorderPainted(false);
+        RegresarBtn.setFocusPainted(false);
+        RegresarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegresarBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(RegresarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, 140, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -120,7 +150,26 @@ public class VerEventos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void BorrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BorrarBtnActionPerformed
+        int x = tabla.getSelectedRow();
+        System.out.println(x);
+        
+        if (x >= 0){
+            Evento eventoBorrar = eventos.get(x);
+            eventoManagement.borrarEvento(eventoBorrar);
+            model.removeRow(x);  
+        }
+        
+    }//GEN-LAST:event_BorrarBtnActionPerformed
+
+    private void RegresarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegresarBtnActionPerformed
+        new GestorEventos().setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_RegresarBtnActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BorrarBtn;
+    private javax.swing.JButton RegresarBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

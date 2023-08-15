@@ -16,8 +16,6 @@ public class AddEventos extends javax.swing.JFrame {
     /**
      * Creates new form AddEventos
      */
-    
-    private List<Evento> eventos;
     EventoManagement eventoManagement = new EventoManagement();
     
     public AddEventos() {

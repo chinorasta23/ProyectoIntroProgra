@@ -109,15 +109,12 @@ public class AddEventos extends javax.swing.JFrame {
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 650, 70));
 
         CATEGORIATEXT.setBackground(new java.awt.Color(204, 204, 204));
-        CATEGORIATEXT.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(CATEGORIATEXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 230, 30));
 
         EDADMINIMATEXT.setBackground(new java.awt.Color(204, 204, 204));
-        EDADMINIMATEXT.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(EDADMINIMATEXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, 230, 30));
 
         CIUDADTEXT.setBackground(new java.awt.Color(204, 204, 204));
-        CIUDADTEXT.setForeground(new java.awt.Color(0, 0, 0));
         CIUDADTEXT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CIUDADTEXTActionPerformed(evt);
@@ -126,7 +123,6 @@ public class AddEventos extends javax.swing.JFrame {
         jPanel1.add(CIUDADTEXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 230, 30));
 
         NOMBRETEXT.setBackground(new java.awt.Color(204, 204, 204));
-        NOMBRETEXT.setForeground(new java.awt.Color(0, 0, 0));
         NOMBRETEXT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NOMBRETEXTActionPerformed(evt);
@@ -135,24 +131,19 @@ public class AddEventos extends javax.swing.JFrame {
         jPanel1.add(NOMBRETEXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 230, 30));
 
         DIRECCIONTEXT.setBackground(new java.awt.Color(204, 204, 204));
-        DIRECCIONTEXT.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(DIRECCIONTEXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 230, 30));
 
         IDTEXT.setBackground(new java.awt.Color(204, 204, 204));
-        IDTEXT.setForeground(new java.awt.Color(0, 0, 0));
         IDTEXT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel1.add(IDTEXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 230, 30));
 
         FECHATEXT.setBackground(new java.awt.Color(204, 204, 204));
-        FECHATEXT.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(FECHATEXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, 230, 30));
 
         CAPACIDADTEXT.setBackground(new java.awt.Color(204, 204, 204));
-        CAPACIDADTEXT.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(CAPACIDADTEXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 230, 30));
 
         ASIENTOSVENDIDOSTEXT.setBackground(new java.awt.Color(204, 204, 204));
-        ASIENTOSVENDIDOSTEXT.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(ASIENTOSVENDIDOSTEXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, 230, 30));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -223,6 +214,7 @@ public class AddEventos extends javax.swing.JFrame {
         jPanel1.add(AgregarEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 344, 230, 40));
 
         jButton2.setBackground(new java.awt.Color(102, 0, 102));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("<");
         jButton2.setBorder(null);
         jButton2.setBorderPainted(false);

@@ -50,6 +50,7 @@ public class VerEventos extends javax.swing.JFrame {
         tabla = new javax.swing.JTable();
         BorrarBtn = new javax.swing.JButton();
         RegresarBtn = new javax.swing.JButton();
+        EDITARbtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -105,7 +106,15 @@ public class VerEventos extends javax.swing.JFrame {
             new String [] {
                 "Id", "Nombre", "Ciudad", "Direccion", "Categoria", "Fecha", "Capacidad", "Asientos Vendidos", "Edad Minima"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tabla);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 550, 230));
@@ -121,7 +130,7 @@ public class VerEventos extends javax.swing.JFrame {
                 BorrarBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(BorrarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, 140, 40));
+        jPanel1.add(BorrarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 140, 40));
 
         RegresarBtn.setBackground(new java.awt.Color(102, 0, 102));
         RegresarBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -134,7 +143,20 @@ public class VerEventos extends javax.swing.JFrame {
                 RegresarBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(RegresarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, 140, 40));
+        jPanel1.add(RegresarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 140, 40));
+
+        EDITARbtn.setBackground(new java.awt.Color(102, 0, 102));
+        EDITARbtn.setForeground(new java.awt.Color(255, 255, 255));
+        EDITARbtn.setText("EDITAR");
+        EDITARbtn.setBorder(null);
+        EDITARbtn.setBorderPainted(false);
+        EDITARbtn.setFocusPainted(false);
+        EDITARbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EDITARbtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(EDITARbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, 140, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -167,8 +189,27 @@ public class VerEventos extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_RegresarBtnActionPerformed
 
+    private void EDITARbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EDITARbtnActionPerformed
+        int x = tabla.getSelectedRow();
+        int y = tabla.getSelectedColumn();
+        
+        System.out.println(x);
+        System.out.println(y);
+        
+        if (x>0 && y > 0){
+            if (y == 0){
+                Evento eventoEditar = eventos.get(x);
+                System.out.println(eventoEditar);
+                int EventoID = (int) tabla.getValueAt(x, y);
+                eventoManagement.editarEvento(EventoID, eventoEditar);
+            }
+        }
+        
+    }//GEN-LAST:event_EDITARbtnActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BorrarBtn;
+    private javax.swing.JButton EDITARbtn;
     private javax.swing.JButton RegresarBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

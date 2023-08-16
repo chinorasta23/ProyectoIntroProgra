@@ -10,11 +10,14 @@ package proyectointroprogra;
  */
 public class JfInicio extends javax.swing.JFrame {
 
-    
+    private AlmacenamientoUsuarios almacenamiento;
     
     public JfInicio() {
         initComponents();
         this.setLocationRelativeTo(null);
+        almacenamiento = AlmacenamientoUsuarios.getInstance();
+        Usuarios nuevoUsuario = new Usuarios("admin", "admin", "admin", "admin", true, "admin");
+                almacenamiento.agregarUsuario(nuevoUsuario);
     }
 
     /**

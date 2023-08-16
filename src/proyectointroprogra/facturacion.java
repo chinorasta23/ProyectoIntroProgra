@@ -4,9 +4,6 @@
  */
 package proyectointroprogra;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author dooha
@@ -173,15 +170,16 @@ public class Facturacion extends javax.swing.JFrame {
 
  
     private void crearFacturaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearFacturaBtnActionPerformed
-    // Obtener los valores de los campos de texto
+    //Darle un valor a los atributos
     String nombre = nombreFactura.getText();
     String apellido = apellidoFactura.getText();
     String fecha = fechaFactura.getText();
     double monto = Double.parseDouble(montoFactura.getText());
 
-    // Crear una nueva instancia de Facturas
+    // Crear factura
     Facturas factura = new Facturas(nombre, apellido, fecha, monto);
     
+    //Agrega la factura al arreglo
     facturar.agregarFactura(factura);
 
     nombreFactura.setText("Nombre...");
@@ -192,13 +190,14 @@ public class Facturacion extends javax.swing.JFrame {
     }//GEN-LAST:event_crearFacturaBtnActionPerformed
 
     private void regresarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresarBtnActionPerformed
-        // TODO add your handling code here:
-        new Main().setVisible(true);
+        // Regresar al menu
+        new MenuAdmin().setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_regresarBtnActionPerformed
 
     private void verFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verFacturasActionPerformed
         new FacturasViewer().setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_verFacturasActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

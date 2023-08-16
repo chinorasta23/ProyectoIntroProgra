@@ -20,12 +20,14 @@ public class FacturasViewer extends javax.swing.JFrame {
     public FacturasViewer() {
         initComponents();
         model = (DefaultTableModel) tabla.getModel();
+        // Darle los datos del arreglo facturas
         facturas = facturar.getFacturas();
         llenarTabla();
         
     }
     
     private void llenarTabla() {
+        // Recorrer las facturas en el arreglo facturas
         for (Facturas facturar : facturas) {
             Object[] fila = {
                 facturar.getNombre(), 
@@ -145,7 +147,8 @@ public class FacturasViewer extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void regresarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresarButtonActionPerformed
-        // TODO add your handling code here:
+        // Cerrar Ventana
+        new Facturacion().setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_regresarButtonActionPerformed
 

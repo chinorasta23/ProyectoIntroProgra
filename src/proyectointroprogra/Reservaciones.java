@@ -268,6 +268,7 @@ public class Reservaciones extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     
@@ -289,21 +290,23 @@ public class Reservaciones extends javax.swing.JFrame {
         int MONTO = CantidadAsientos * PrecioAsiento;
         TotalLabel.setText(String.valueOf(MONTO));
         
-        
-        if(CantidadAsientos <= AsientosDisponibles){
-            if (Edad > EdadMinima){
-                Facturas factura = new Facturas(NOMBRE, APELLIDO, FECHA, MONTO);
-                facturar.agregarFactura(factura);
-                JOptionPane.showMessageDialog(null, "¡Se ha reservado correctamente!");
-                AsientosVendidos++;
-                eventoGet.setAsientosVendidos(AsientosVendidos);
-                
+            if(CantidadAsientos < AsientosDisponibles){
+                if (Edad >= EdadMinima){
+                    Facturas factura = new Facturas(NOMBRE, APELLIDO, FECHA, MONTO);
+                    facturar.agregarFactura(factura);
+                    JOptionPane.showMessageDialog(null, "¡Se ha reservado correctamente!");
+                    AsientosVendidos += CantidadAsientos;
+                    eventoGet.setAsientosVendidos(AsientosVendidos);
+                    setVisible(false);
+                    new Reservaciones().setVisible(true);
+                }else{
+                   JOptionPane.showMessageDialog(null, "ERROR: No cumple con la edad requerida");
+                }
             }else{
-               JOptionPane.showMessageDialog(null, "ERROR: No cumple con la edad requerida");
-            }
-        }else{
-            JOptionPane.showMessageDialog(null,"Error: No hay asientos disponibles");
-        }
+                JOptionPane.showMessageDialog(null,"Error: No hay asientos disponibles");
+            }     
+
+
         
 
     

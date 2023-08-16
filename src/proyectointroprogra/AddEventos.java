@@ -206,6 +206,7 @@ public class AddEventos extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void CIUDADTEXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CIUDADTEXTActionPerformed

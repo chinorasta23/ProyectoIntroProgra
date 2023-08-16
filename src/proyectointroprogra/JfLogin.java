@@ -11,11 +11,7 @@ import javax.swing.JOptionPane;
  * @author and03
  */
 public class JfLogin extends javax.swing.JFrame {
-
-    
     private AlmacenamientoUsuarios almacenamiento;
-    
-    boolean isAdmin = false;
     
     public JfLogin() {
         //Patrón Singleton.
@@ -165,22 +161,23 @@ public class JfLogin extends javax.swing.JFrame {
 
         String usuario = txtUser.getText();
         String password = passField.getText();
-
-        if (usuario == "admin" && password == "admin"){
-            isAdmin = true;
-            JOptionPane.showMessageDialog(JfLogin.this, "¡Inicio de Sesión Administrador!");
-            new MenuAdmin().setVisible(true);
-            setVisible(false);
-        }else{
-            if (almacenamiento.validarCredenciales(usuario, password)) {
-                isAdmin = false;
-                JOptionPane.showMessageDialog(JfLogin.this, "¡Inicio de Sesión Exitoso!");
+        
+        //Hace la validación de si el usuario y contraseña se encuentran en el array y si es correcto
+        if (almacenamiento.validarCredenciales(usuario, password)) {
+            // Hace la validación de si el usuario es administrador
+            if (almacenamiento.isAdmin(usuario)){
+                //Abre el menu administrador
+                JOptionPane.showMessageDialog(JfLogin.this, "¡Inicio de Sesión Administrador!");
                 new MenuAdmin().setVisible(true);
                 setVisible(false);
-                
-            } else {
-                JOptionPane.showMessageDialog(JfLogin.this, "Inicio de Sesión Fallido. Verifica tus credenciales.", "Error", JOptionPane.ERROR_MESSAGE);
+            } else{
+                //Abre el menu de usuarios
+                JOptionPane.showMessageDialog(JfLogin.this, "¡Inicio de Sesión Exitoso!");
+                new MenuUser().setVisible(true);
+                setVisible(false);
             }
+        } else {
+            JOptionPane.showMessageDialog(JfLogin.this, "Inicio de Sesión Fallido. Verifica tus credenciales.", "Error", JOptionPane.ERROR_MESSAGE);
         }
         
 

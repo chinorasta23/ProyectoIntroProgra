@@ -27,10 +27,8 @@ public class EventoManagement {
         System.out.println(eventos);
     }
 
-    public void editarEvento(int eventId, Evento newEventoo) {
-        Evento event = eventos.get(eventId);
-        
-        eventos.set(eventId, newEventoo);
+    public void editarEvento(int eventId, Evento event) {
+        eventos.set(eventId, event);
     }
 
     public void borrarEvento(Evento x) {   

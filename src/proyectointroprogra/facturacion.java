@@ -162,6 +162,7 @@ public class Facturacion extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void nombreFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreFacturaActionPerformed

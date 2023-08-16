@@ -20,14 +20,14 @@ class Usuarios {
     private String Correo;
     private boolean isAdmin;
 
-    public Usuarios(String nombre, String apellido, String usuario, String password, boolean estado, String correo, boolean isAdmin) {
+    public Usuarios(String nombre, String apellido, String usuario, String password, boolean estado, String correo, boolean isadmin) {
         Nombre = nombre;
         Apellido = apellido;
         Usuario = usuario;
         Password = password;
         Estado = estado;
         Correo = correo;
-        isAdmin = isAdmin;
+        isAdmin = isadmin;
     }
 
     public String getNombre() {
@@ -77,6 +77,10 @@ class Usuarios {
     public void setCorreo(String correo) {
         Correo = correo;
     }
+    
+    public boolean getIsAdmin(){
+        return isAdmin;
+    }
 }
 class AlmacenamientoUsuarios {
     //Método de almacenamiento LinkedList.
@@ -110,7 +114,21 @@ class AlmacenamientoUsuarios {
         }
         return false;
     }
+    
+    public boolean isAdmin(String usuario) {
+        for (Usuarios user : listaUsuarios) {
+            if (user.getUsuario().equals(usuario) && user.getIsAdmin() == true) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    
 }
+
+
+
 
 public class Modulo_Usuarios{
     public static void main(String[] args) {

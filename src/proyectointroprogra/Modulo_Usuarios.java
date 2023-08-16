@@ -18,14 +18,16 @@ class Usuarios {
     private String Password;
     private boolean Estado;
     private String Correo;
+    private boolean isAdmin;
 
-    public Usuarios(String nombre, String apellido, String usuario, String password, boolean estado, String correo) {
+    public Usuarios(String nombre, String apellido, String usuario, String password, boolean estado, String correo, boolean isAdmin) {
         Nombre = nombre;
         Apellido = apellido;
         Usuario = usuario;
         Password = password;
         Estado = estado;
         Correo = correo;
+        isAdmin = isAdmin;
     }
 
     public String getNombre() {
@@ -98,7 +100,8 @@ class AlmacenamientoUsuarios {
     public LinkedList<Usuarios> getListaUsuarios() {
         return listaUsuarios;
     }
-
+    
+    
     public boolean validarCredenciales(String usuario, String password) {
         for (Usuarios user : listaUsuarios) {
             if (user.getUsuario().equals(usuario) && user.getPassword().equals(password)) {

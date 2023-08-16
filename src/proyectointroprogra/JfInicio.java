@@ -16,8 +16,6 @@ public class JfInicio extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         almacenamiento = AlmacenamientoUsuarios.getInstance();
-        Usuarios nuevoUsuario = new Usuarios("admin", "admin", "admin", "admin", true, "admin");
-                almacenamiento.agregarUsuario(nuevoUsuario);
     }
 
     /**

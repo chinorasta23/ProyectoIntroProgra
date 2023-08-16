@@ -197,8 +197,9 @@ public class JfRegistrar extends javax.swing.JFrame {
         String password = txtPassword.getText();
         boolean estado = chckEstado.isSelected();
         String correo = txtCorreo.getText();
+        boolean isAdmin = false;
 
-        Usuarios nuevoUsuario = new Usuarios(nombre, apellido, usuario, password, estado, correo);
+        Usuarios nuevoUsuario = new Usuarios(nombre, apellido, usuario, password, estado, correo, isAdmin);
                 almacenamiento.agregarUsuario(nuevoUsuario);
 
         JOptionPane.showMessageDialog(JfRegistrar.this, "Usuario creado exitosamente.");
